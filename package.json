@@ -2,7 +2,7 @@
   "name": "universal-react-redux-exercise",
   "version": "0.0.0",
   "description": "universal react redux exercise",
-  "author": "Mark <mark@remarkablemark.org>",
+  "author": "Brandon Truong <brandon.truong@outlook.com>",
   "scripts": {
     "start": "webpack && node server.js",
     "dev": "npm-run-all --parallel watch:*",

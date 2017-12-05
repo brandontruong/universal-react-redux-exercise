@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-class Layout extends React.Component {
+class Layout extends Component {
     constructor() {
         super();
         this._handleClick = this._handleClick.bind(this);
+        console.log('Layout constructor');
     }
     _handleClick() {
         alert(this.props.custom.title);

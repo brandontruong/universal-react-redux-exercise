@@ -1,20 +1,33 @@
-var router = require('express').Router();
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
-var ReactRouter = require('react-router');
-var Redux = require('redux');
-var Provider = require('react-redux').Provider;
+const router = require('express').Router();
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+const ReactRouter = require('react-router');
+const Redux = require('redux');
+const Provider = require('react-redux').Provider;
+const makes = require('../data/makes.json');
+const models = require('../data/models.json');
+const carOfTheWeek = require('../data/carOfTheWeek.json');
 
 function reducer(state) { return state; }
 
-router.get('/api/getmake', function(request, response) {
+// api calls
+router.get('/api/getmakes', function(request, response) {
     response.setHeader('Content-Type', 'application/json');
-    response.send(JSON.stringify({ a: 1 }));
+    response.send(JSON.stringify(makes));
+})
+router.get('/api/getmodels', function(request, response) {
+    response.setHeader('Content-Type', 'application/json');
+    response.send(JSON.stringify(models));
+})
+router.get('/api/carOfTheWeek', function(request, response) {
+    response.setHeader('Content-Type', 'application/json');
+    response.send(JSON.stringify(carOfTheWeek));
 })
 router.get('*', function(request, response) {
-    var initialState = { title: 'Universal React' };
-    var store = Redux.createStore(reducer, initialState);
-
+    const initialState = { title: 'Universal React' };
+    const store = Redux.createStore(reducer, 
+        initialState);
+        
     ReactRouter.match({
         routes: require('./routes.jsx'),
         location: request.url

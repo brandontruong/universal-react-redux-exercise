@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default function Index() {
+const Index = ({ title }) => {
     return (
-        <p>
-            Current: <strong>Index. Omg</strong>
-        </p>
-    );
+        <div>
+            {title}
+        </div>
+    )
 }
+
+const mapStateToProps = (state) => ({
+    title: state.title
+})
+
+const mapDispatchToProps = {
+}
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Index)
