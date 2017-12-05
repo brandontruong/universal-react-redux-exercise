@@ -20,18 +20,18 @@ class Layout extends Component {
                     <link rel='stylesheet' href='/style.css' />
                 </head>
                 <body>
-                    <h1>{custom.title}</h1>
+                    {/* <h1>{custom.title}</h1>
                     <p>Isn't server-side rendering remarkable?</p>
-                    <button onClick={this._handleClick}>Click Me</button>
-                    {this.props.children}
+                    <button onClick={this._handleClick}>Click Me</button> */}
                     <ul>
                         <li>
                             <Link to='/'>Home</Link>
                         </li>
                         <li>
-                            <Link to='/about'>About</Link>
+                            <Link to='/search'>Search</Link>
                         </li>
                     </ul>
+                    <div>{this.props.children}</div>
                     <script dangerouslySetInnerHTML={{
                         __html: 'window.PROPS=' + JSON.stringify(custom)
                     }} />

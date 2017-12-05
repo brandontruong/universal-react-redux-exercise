@@ -11,20 +11,20 @@ const carOfTheWeek = require('../data/carOfTheWeek.json');
 function reducer(state) { return state; }
 
 // api calls
-router.get('/api/getmakes', function(request, response) {
-    response.setHeader('Content-Type', 'application/json');
-    response.send(JSON.stringify(makes));
-})
-router.get('/api/getmodels', function(request, response) {
-    response.setHeader('Content-Type', 'application/json');
-    response.send(JSON.stringify(models));
-})
-router.get('/api/carOfTheWeek', function(request, response) {
-    response.setHeader('Content-Type', 'application/json');
-    response.send(JSON.stringify(carOfTheWeek));
-})
+// router.get('/api/getmakes', function(request, response) {
+//     response.setHeader('Content-Type', 'application/json');
+//     response.send(JSON.stringify(makes));
+// })
+// router.get('/api/getmodels', function(request, response) {
+//     response.setHeader('Content-Type', 'application/json');
+//     response.send(JSON.stringify(models));
+// })
+// router.get('/api/carOfTheWeek', function(request, response) {
+//     response.setHeader('Content-Type', 'application/json');
+//     response.send(JSON.stringify(carOfTheWeek));
+// })
 router.get('*', function(request, response) {
-    const initialState = { title: 'Universal React' };
+    const initialState = { title: 'Universal React', makes, models, carOfTheWeek };
     const store = Redux.createStore(reducer, 
         initialState);
         

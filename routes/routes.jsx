@@ -8,13 +8,14 @@ import {
 
 import Layout from '../views/Layout.jsx';
 import Index from '../views/Index.jsx';
-import About from '../views/About.jsx';
+import Search from '../views/Search.jsx';
 
 module.exports = (
     <Router history={browserHistory}>
         <Route path='/' component={Layout}>
             <IndexRoute component={Index} />
-            <Route path='about' component={About} />
+            <Route path='search' component={Search} />
+            {/* <Route exact path="/make/model/:id" render={renderModel} /> */}
         </Route>
     </Router>
 );
