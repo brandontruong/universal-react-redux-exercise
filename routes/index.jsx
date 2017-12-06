@@ -7,8 +7,9 @@ const Provider = require('react-redux').Provider;
 const makes = require('../data/makes.json');
 const models = require('../data/models.json');
 const carOfTheWeek = require('../data/carOfTheWeek.json');
+import reducer from '../reducers/index.jsx';
 
-function reducer(state) { return state; }
+// function reducer(state) { return state; }
 
 // api calls
 // router.get('/api/getmakes', function(request, response) {

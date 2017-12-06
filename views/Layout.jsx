@@ -6,7 +6,6 @@ class Layout extends Component {
     constructor() {
         super();
         this._handleClick = this._handleClick.bind(this);
-        console.log('Layout constructor');
     }
     _handleClick() {
         alert(this.props.custom.title);

@@ -1,12 +1,11 @@
-var ReactDOM = require('react-dom');
-var React = require('react');
-var routes = require('./routes/routes.jsx');
-var Redux = require('redux');
-var Provider = require('react-redux').Provider;
+const ReactDOM = require('react-dom');
+const React = require('react');
+const routes = require('./routes/routes.jsx');
+const Redux = require('redux');
+const Provider = require('react-redux').Provider;
+import reducer from './reducers/index.jsx';
 
-function reducer(state) { return state; }
-
-var store = Redux.createStore(reducer, window.PROPS);
+const store = Redux.createStore(reducer, window.PROPS);
 
 ReactDOM.render(
     <Provider store={store}>
