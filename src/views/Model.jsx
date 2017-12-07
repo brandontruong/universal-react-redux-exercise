@@ -6,13 +6,18 @@ import { getModels, getModel, loadModelDetail } from '../actions/index.jsx';
 const Model = ({ selectedModel }) => {
     return (
         <div>
+            <h1>Car detail</h1>
             { selectedModel !== undefined &&
-                <div>
-                    <div>
-                        <lable>Name: </lable> {selectedModel.name}
+                <div className="media">
+                    <div className="media-left">
+                        <img src={selectedModel.imageUrl} alt={selectedModel.name} 
+                        className="media-object" />
                     </div>
-                    <div><lable>Price: </lable> {'$' + selectedModel.price.toLocaleString()}</div>
-                    <img src={selectedModel.imageUrl} alt={selectedModel.name}/> 
+                    <div className="media-body">
+                        <h4 className="media-heading">{selectedModel.name}</h4>
+                        <div><lable>Price: </lable> {'$' + selectedModel.price.toLocaleString()}</div>
+                        
+                    </div>
                 </div>
             }
         </div>

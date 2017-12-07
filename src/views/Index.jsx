@@ -5,10 +5,17 @@ const Index = ({ carOfTheWeek, selectedModel }) => {
     return (
         <div>
             <h1>Car of the week</h1>
-            <div>{selectedModel.name}</div>
-            <div>{selectedModel.price}</div>
-            <div>{carOfTheWeek.review}</div>
-            <img src={selectedModel.imageUrl} alt={selectedModel.name}/>
+            <div className="media">
+                <div className="media-left">
+                    <img src={selectedModel.imageUrl} alt={selectedModel.name} 
+                    className="media-object" />
+                </div>
+                <div className="media-body">
+                    <h4 className="media-heading">{selectedModel.name}</h4>
+                    <div><lable>Price: </lable> {'$' + selectedModel.price.toLocaleString()}</div>
+                    <div>{carOfTheWeek.review}</div>
+                </div>
+            </div>
         </div>
     )
 }
