@@ -1,25 +1,22 @@
-export default (state = {selectedMakeId: 0, selectedModelId: 0}, action) => {
+export default (state = { selectedMakeId: 0, selectedModelId: 0 }, action) => {
   switch (action.type) {
     case 'GET_MODELS':
-      const newState = {
+      return {
         makes: state.makes,
         models: state.models,
+        carOfTheWeek: state.carOfTheWeek,
         selectedMakeId: parseInt(action.makeId),
         selectedModelId: state.selectedModelId
-      }
-      return newState;
+      };
     case 'GET_MODEL':
-      const newState1 = {
+      return {
         makes: state.makes,
         models: state.models,
+        carOfTheWeek: state.carOfTheWeek,
         selectedMakeId: state.selectedMakeId,
         selectedModelId: parseInt(action.modelId)
-      }
-      return newState1;
-    case 'LOAD_MODEL_DETAIL':
-      console.log(state);
-      return state;
+      };
     default:
-      return state
+      return state;
   }
 }

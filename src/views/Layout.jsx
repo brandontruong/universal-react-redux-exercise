@@ -5,23 +5,15 @@ import { connect } from 'react-redux';
 class Layout extends Component {
     constructor() {
         super();
-        this._handleClick = this._handleClick.bind(this);
-    }
-    _handleClick() {
-        alert(this.props.custom.title);
     }
     render() {
         const { custom } = this.props;
         return (
             <html>
                 <head>
-                    <title>{custom.title}</title>
                     <link rel='stylesheet' href='/style.css' />
                 </head>
                 <body>
-                    {/* <h1>{custom.title}</h1>
-                    <p>Isn't server-side rendering remarkable?</p>
-                    <button onClick={this._handleClick}>Click Me</button> */}
                     <ul>
                         <li>
                             <Link to='/'>Home</Link>

@@ -6,7 +6,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static('public'));
-app.use(require('./routes/index.jsx'));
+app.use(require('./src/routes/index.jsx'));
 
 var PORT = 3000;
 app.listen(PORT, function() {

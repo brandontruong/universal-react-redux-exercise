@@ -7,7 +7,8 @@
     "start": "webpack && node server.js",
     "dev": "npm-run-all --parallel watch:*",
     "watch:webpack": "webpack -w",
-    "watch:server": "nodemon --ext js,jsx --ignore public/ server.js"
+    "watch:server": "nodemon --ext js,jsx --ignore public/ server.js",
+    "test": "react-scripts test"
   },
   "main": "server.js",
   "keywords": [
@@ -31,8 +32,11 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "enzyme": "^3.2.0",
     "nodemon": "^1.11.0",
-    "npm-run-all": "^3.1.2"
+    "npm-run-all": "^3.1.2",
+    "react-scripts": "^1.0.17",
+    "react-test-renderer": "^16.2.0"
   },
   "private": true,
   "license": "MIT"
