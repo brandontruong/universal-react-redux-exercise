@@ -16,6 +16,9 @@ export default (state = {selectedMakeId: 0, selectedModelId: 0}, action) => {
         selectedModelId: parseInt(action.modelId)
       }
       return newState1;
+    case 'LOAD_MODEL_DETAIL':
+      console.log(state);
+      return state;
     default:
       return state
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { getModels, getModel } from '../actions/index.jsx';
 
 const Search = ({ makes, modelsByMake, onMakeChange, onModelChange, selectedMakeId, selectedModelId }) => {
@@ -21,7 +22,9 @@ const Search = ({ makes, modelsByMake, onMakeChange, onModelChange, selectedMake
                     ))}
                 </select>
             </div>
-            <button disabled={!(selectedModelId > 0)}>Search</button>
+            <Link to={'/make/model/' + selectedModelId}
+                className={"button" + ((selectedModelId > 0)?'':' disabled')}
+                >Search</Link>
         </div>
     )
 }
@@ -32,7 +35,6 @@ const mapStateToProps = (state) => {
     if (selectedMakeId > 0) {
         modelsByMake = models.filter(current => current.makeId === selectedMakeId);
     }
-    console.log(modelsByMake);
     return {
         makes,
         modelsByMake,
