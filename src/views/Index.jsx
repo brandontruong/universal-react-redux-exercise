@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const Index = ({ carOfTheWeek, selectedModel }) => {
     return (
@@ -20,6 +21,11 @@ const Index = ({ carOfTheWeek, selectedModel }) => {
     )
 }
 
+Index.propTypes = {
+    carOfTheWeek: PropTypes.object.isRequired,
+    selectedModel: PropTypes.object.isRequired
+}
+  
 const mapStateToProps = (state) => {
     const { carOfTheWeek, models } = state;
     const selectedModel = models.find(current => current.id === carOfTheWeek.modelId);

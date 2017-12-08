@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { getModels, getModel, loadModelDetail } from '../actions/index.jsx';
-
+import PropTypes from 'prop-types';
 const Model = ({ selectedModel }) => {
     return (
         <div>
@@ -23,7 +23,9 @@ const Model = ({ selectedModel }) => {
         </div>
     )
 }
-
+Model.propTypes = {
+    selectedModel: PropTypes.object.isRequired
+}
 const mapStateToProps = (state, ownProps) => {
     const model = state.models.find(current => current.id === parseInt(ownProps.params.id));
     return {
@@ -31,10 +33,6 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-const mapDispatchToProps = {
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
 )(Model)
