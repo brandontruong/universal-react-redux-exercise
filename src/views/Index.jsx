@@ -27,7 +27,13 @@ Index.propTypes = {
 }
   
 const mapStateToProps = (state) => {
-    const { carOfTheWeek, models } = state;
+    const { carOfTheWeek, models, dataLoaded } = state;
+    if (!dataLoaded) {
+        return {
+            carOfTheWeek: { review: ''},
+            selectedModel: { price: 0}
+        }
+    }
     const selectedModel = models.find(current => current.id === carOfTheWeek.modelId);
     return {
         carOfTheWeek,

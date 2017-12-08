@@ -45,7 +45,13 @@ Search.propTypes = {
     selectedModelId: PropTypes.number
 }
 const mapStateToProps = (state) => {
-    const { makes, models, selectedMakeId, selectedModelId } = state;
+    const { makes, models, selectedMakeId, selectedModelId, dataLoaded } = state;
+    if (!dataLoaded) {
+        return {
+            makes: [],
+            modelsByMake: []
+        }
+    }
     let modelsByMake = [];
     if (selectedMakeId > 0) {
         modelsByMake = models.filter(current => current.makeId === selectedMakeId);

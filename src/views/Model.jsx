@@ -27,7 +27,13 @@ Model.propTypes = {
     selectedModel: PropTypes.object.isRequired
 }
 const mapStateToProps = (state, ownProps) => {
-    const model = state.models.find(current => current.id === parseInt(ownProps.params.id));
+    const { models, dataLoaded } = state;
+    if (!dataLoaded) {
+        return {
+            selectedModel: { price: 0}
+        }
+    }
+    const model = models.find(current => current.id === parseInt(ownProps.params.id));
     return {
         selectedModel: model
     }

@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { fetchData } from '../api/index.jsx';
+import { loadData } from '../actions/index.jsx';
 
 class Layout extends Component {
     constructor() {
         super();
+    }
+    componentDidMount() {
+        fetchData((data) => {
+            this.props.dispatch(loadData(data))
+        });
     }
     render() {
         const { custom } = this.props;

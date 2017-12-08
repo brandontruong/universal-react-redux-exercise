@@ -1,6 +1,6 @@
 import reducer from './index.jsx'
 
-describe('todos reducer', () => {
+describe('reducer', () => {
     it('should handle initial state', () => {
         expect(
             reducer({}, '')

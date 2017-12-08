@@ -1,7 +1,15 @@
 export default (state = { selectedMakeId: 0, selectedModelId: 0 }, action) => {
   switch (action.type) {
+    case 'LOAD_DATA':
+      return {
+        dataLoaded: true,
+        makes: action.data.makes.data,
+        models: action.data.models.data,
+        carOfTheWeek: action.data.carOfTheWeek.data,
+      }
     case 'GET_MODELS':
       return {
+        dataLoaded: state.dataLoaded,
         makes: state.makes,
         models: state.models,
         carOfTheWeek: state.carOfTheWeek,
@@ -10,6 +18,7 @@ export default (state = { selectedMakeId: 0, selectedModelId: 0 }, action) => {
       };
     case 'GET_MODEL':
       return {
+        dataLoaded: state.dataLoaded,
         makes: state.makes,
         models: state.models,
         carOfTheWeek: state.carOfTheWeek,
